@@ -1,0 +1,4 @@
+services:
+#    futura_forum.example:
+#        class: Futura\ForumBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

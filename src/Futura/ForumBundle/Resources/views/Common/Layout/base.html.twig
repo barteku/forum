@@ -1,0 +1,72 @@
+{% extends LayoutTemplate %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% block stylesheets_extra %}
+    {% endblock stylesheets_extra %}
+{% endblock stylesheets %}
+
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {% block javascripts_extra %}
+    {% endblock javascripts_extra %}
+{% endblock javascripts %}
+
+
+
+{% block tool_bar %}
+    {%- spaceless -%}
+
+
+    <div class="container clearfix">
+        <div class="row" style="padding:10px 0;">
+            <div class="col-md-7">
+                <div class="row">
+                    {%- block crumb_trail -%}
+                    {%- if crumbs is defined -%}
+                    {%- include 'CCDNForumForumBundle:Common:Layout/crumbs.html.twig' with {'crumbs': crumbs } -%}
+                    {%- endif -%}
+                    {%- endblock crumb_trail -%}
+                </div>
+            </div>
+            <div class="col-md-5 text-right">
+            {% block actions %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+
+{%- endspaceless -%}
+{% endblock tool_bar %}
+
+
+
+{% block sidebar %}
+    {%- spaceless -%}
+
+    {{ parent() }}
+
+    {%- include 'CCDNForumForumBundle:Common:Layout/Sidebar/user_forum.html.twig' -%}
+    {% if forum_name is defined %}
+        {%- include 'CCDNForumForumBundle:Common:Layout/Sidebar/user_subscriptions.html.twig' -%}
+    {% endif %}
+    {%- endspaceless -%}
+
+{% endblock %}
+
+
+
+{% block body %}
+    {%- spaceless -%}
+
+    {%- include 'CCDNForumForumBundle:Common:Layout/flashes.html.twig' -%}
+
+    {%- block body_content -%}
+    {%- endblock body_content -%}
+
+
+    {%- endspaceless -%}
+{% endblock body %}

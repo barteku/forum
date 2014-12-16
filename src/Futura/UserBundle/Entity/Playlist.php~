@@ -1,0 +1,49 @@
+<?php
+
+namespace Application\Sonata\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="play_list")
+ */
+class Playlist
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     *    message="Please provide your playlist name",
+     *    groups={"details", "Registration"}
+     * )
+     */
+    protected $name;
+
+    /**
+     * @var $user
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="playlists", cascade={"persist"})
+     */
+    protected $user;
+
+    /**
+     * @var string $link
+     *
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     *    message="Please provide your playlist name",
+     *    groups={"details", "Registration"}
+     * )
+     */
+    protected $link;
+}

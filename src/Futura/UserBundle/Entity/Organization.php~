@@ -1,0 +1,79 @@
+<?php
+
+namespace Application\Sonata\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="organization")
+ */
+class Organization
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(
+     *    message="Please provide your organization name",
+     *    groups={"details", "Registration"}
+     * )
+     */
+    private $name;
+
+    /**
+     * @var string $image
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+    
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $file;
+    
+    /**
+     * @var string $title
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $title;
+    /**
+     * @var string $description
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+    
+    /**
+     * @var string $website
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $website;
+    
+    /**
+     * @var string $location
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $locale;
+    
+    /**
+     * @var string $phone
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $phone;
+        
+   
+}

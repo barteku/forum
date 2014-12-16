@@ -1,0 +1,70 @@
+/* 
+    Created on : 04-Dec-2014, 16:24:07
+    Author     : bartek
+*/
+html,
+body {
+height: 100%;
+/* The html and body elements cannot have any padding or margin. */
+}
+
+body {padding: 70px}
+      
+#page-wrap {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -50px;
+}
+
+.user-menu {margin-right: 15px;}
+
+#push,
+#footer {
+    height: 50px;
+}
+
+.glyphicon {margin-right: 7px;}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.page-sidebar-left, .page-body-right {border: 1px solid #e5e5e5; border-radius: 5px; padding: 10px}
+.page-body-right {margin-left: 30px;}
+
+.navbar-logo {max-height: 24px; width: auto}
+
+.filters {margin-bottom: 20px;}
+
+.form-group textarea {width: 80%; min-height: 150px}
