@@ -94,3 +94,17 @@ knp_menu:
         template: knp_menu.html.twig
     templating: false # if true, enables the helper for PHP templates
     default_renderer: twig # The renderer to use, list is also available by default
+    
+ccdn_forum_forum:
+    forum:
+        admin:
+            edit:
+                form_theme: CCDNComponentCommonBundle:Common:Form/fields.html.twig
+    board:
+        admin:
+            edit:
+                form_theme: CCDNComponentCommonBundle:Common:Form/fields.html.twig
+    form:
+        type:
+            board_update:
+                class: 'Futura\ForumBundle\Form\Type\Admin\Board\BoardUpdateFormType'

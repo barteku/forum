@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bbb104e254457afc020fcb3bdfd5e301",
+    "hash": "df0beb17664b579f61586607291f0bf7",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -139,6 +139,51 @@
                 "parser"
             ],
             "time": "2014-02-01 16:02:10"
+        },
+        {
+            "name": "codeconsortium/ccdn-component-common-bundle",
+            "version": "dev-master",
+            "target-dir": "CCDNComponent/CommonBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeconsortium/CCDNComponentCommonBundle.git",
+                "reference": "7449e0c8723e7166679135f515dbb4de2e915b23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeconsortium/CCDNComponentCommonBundle/zipball/7449e0c8723e7166679135f515dbb4de2e915b23",
+                "reference": "7449e0c8723e7166679135f515dbb4de2e915b23",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/symfony": "2.4.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "CCDNComponent\\CommonBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "reecefowell",
+                    "email": "reece@codeconsortium.com",
+                    "homepage": "http://www.reecefowell.com"
+                }
+            ],
+            "description": "CCDN Component Common Bundle",
+            "homepage": "http://github.com/codeconsortium/CCDNComponentCommonBundle",
+            "keywords": [
+                "ccdn",
+                "codeconsortium",
+                "common"
+            ],
+            "time": "2014-02-01 16:01:49"
         },
         {
             "name": "codeconsortium/ccdn-forum-bundle",
@@ -845,16 +890,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.4.6",
+            "version": "v2.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "bebacf79d8d4dae9168f0f9bc6811e6c2cb6a4d9"
+                "reference": "2bc4ff3cab2ae297bcd05f2e619d42e6a7ca9e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/bebacf79d8d4dae9168f0f9bc6811e6c2cb6a4d9",
-                "reference": "bebacf79d8d4dae9168f0f9bc6811e6c2cb6a4d9",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/2bc4ff3cab2ae297bcd05f2e619d42e6a7ca9e68",
+                "reference": "2bc4ff3cab2ae297bcd05f2e619d42e6a7ca9e68",
                 "shasum": ""
             },
             "require": {
@@ -914,7 +959,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2014-10-06 13:22:50"
+            "time": "2014-12-16 13:45:01"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -2250,6 +2295,7 @@
         "codeconsortium/ccdn-forum-bundle": 20,
         "codeconsortium/ccdn-component-bb-code-bundle": 20,
         "codeconsortium/ccdn-component-bb-code": 20,
+        "codeconsortium/ccdn-component-common-bundle": 20,
         "friendsofsymfony/user-bundle": 20,
         "gedmo/doctrine-extensions": 20,
         "knplabs/knp-paginator-bundle": 20,
