@@ -108,3 +108,14 @@ ccdn_forum_forum:
         type:
             board_update:
                 class: 'Futura\ForumBundle\Form\Type\Admin\Board\BoardUpdateFormType'
+                
+ccdn_component_common:
+    service:              
+        provider:             
+            profile_provider:     
+                class:                CCDNComponent\CommonBundle\Component\Provider\Profile\SimpleProfileProvider 
+                fallback_avatar:      bundles/ccdncomponentcommon/images/profile/anonymous_avatar.gif 
+    header:               
+        brand:                
+            route:                # 
+            label:                Futura Forum
