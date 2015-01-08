@@ -5,3 +5,22 @@
         <div class="col-sm-9">{{- form_widget(form) -}}</div>
     </div>
 {%- endblock form_row %}
+
+
+{%- block choice_widget_expanded -%}
+	{%- spaceless -%}
+	    {%- for child in form -%}
+			{%- if form.vars.block_prefixes[1] == 'choice' -%}
+				<div class="checkbox">
+					<label for="{{- child.vars.id -}}" id="label[{{- child.vars.id -}}]" class="form-label">
+						{{- form_widget(child) -}}
+						{{- child.vars.label |trans({}, translation_domain) | raw -}}
+					</label>
+				</div>
+			{%- else -%}
+				{{- form_widget(child) -}}
+				{{- form_label(child) -}}
+			{%- endif -%}
+	    {%- endfor -%}
+	{%- endspaceless -%}
+{%- endblock choice_widget_expanded -%}

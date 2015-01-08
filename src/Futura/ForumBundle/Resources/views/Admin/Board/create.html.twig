@@ -6,6 +6,14 @@
 	{{- 'title.admin.manage-boards.create' |trans({}, 'CCDNForumForumBundle') -}}
 {%- endblock title -%}
 
+{% block actions %}
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{{- path('ccdn_forum_admin_board_list', {'forum_filter': forum_filter}) -}}">
+            {{- 'link.return_to_list' |trans({}, 'FuturaForumBundle') -}}
+        </a>
+    </div>
+{% endblock %} 
+
 {%- block sidebar -%}
 	{%- spaceless -%}
 	{{- parent() -}}
@@ -32,11 +40,12 @@
 
 				{{- form_errors(form) -}}
 
-				{{- form_rest(form) -}}
+				{{- form(form) -}}
 
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
-		                <input type="submit" class="btn btn-primary" value="
+		                <div class="btn-group">
+                                            <input type="submit" class="btn btn-primary" value="
 							{{- 'form.button.save' |trans({}, 'CCDNForumForumBundle') -}}
 						" name="submit[post]" id="submit[post]">
 
@@ -44,6 +53,7 @@
 							{{- 'form.button.cancel' |trans({}, 'CCDNForumForumBundle') -}}
 						</a>
 					</div>
+                                                </div>
 	            </div>
 
 	        </fieldset>

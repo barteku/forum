@@ -91,6 +91,7 @@
                     <td>{{- board.name -}}</td>
                     <td>{{- board.topics |length -}}</td>
                     <td>
+                        <div class="btn-group">
                         <a class="btn btn-default" href="{{- path('ccdn_forum_admin_board_edit', {'boardId': board.id, 'forum_filter': forum_filter, 'category_filter': category_filter}) -}}"
                            id="update_board[{{- board.name -}}]">
                             {{- 'link.edit' |trans({}, 'CCDNForumForumBundle') -}}
@@ -102,7 +103,7 @@
                             {{- 'link.delete' |trans({}, 'CCDNForumForumBundle') -}}
                         </a>
                         {%- endif -%}
-
+                        </div>
                         {%- if category_filter is not null and category_filter != '' %}
                         {% if loop.length > 1 %}
                             <div class="btn-group">

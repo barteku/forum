@@ -49,8 +49,12 @@
 
     {{ parent() }}
 
-    {%- include 'CCDNForumForumBundle:Common:Layout/Sidebar/user_forum.html.twig' -%}
+    {% if forumName is defined %}
+        {%- include 'CCDNForumForumBundle:Common:Layout/Sidebar/user_forum.html.twig' -%}
+    {% endif %}
+    
     {% if forum_name is defined %}
+        
         {%- include 'CCDNForumForumBundle:Common:Layout/Sidebar/user_subscriptions.html.twig' -%}
     {% endif %}
     {%- endspaceless -%}

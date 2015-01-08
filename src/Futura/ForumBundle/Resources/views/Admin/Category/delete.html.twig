@@ -1,54 +1,78 @@
 {% extends 'FuturaForumBundle:Common:Layout/base.html.twig' %}
 
+
 {% set LayoutTemplate = ccdn_forum_forum.category.admin.delete.layout_template %}
 
+
+
 {%- block title -%}
-	{{- 'title.admin.manage-categories.delete' |trans({'%category_name%': category.name}, 'CCDNForumForumBundle') -}}
+{{- 'title.admin.manage-categories.delete' |trans({'%category_name%': category.name}, 'CCDNForumForumBundle') -}}
 {%- endblock title -%}
 
 {%- block sidebar -%}
-	{%- spaceless -%}
-	{{- parent() -}}
-    {%- include 'CCDNForumForumBundle:Common:Layout/Sidebar/admin_forum.html.twig' -%}
-	{%- endspaceless -%}
+{%- spaceless -%}
+{{- parent() -}}
+{%- include 'CCDNForumForumBundle:Common:Layout/Sidebar/admin_forum.html.twig' -%}
+{%- endspaceless -%}
 {%- endblock sidebar -%}
 
+
+{% block actions %}
+    <div class="btn-group">
+        <a class="btn btn-primary" href="{{- path('ccdn_forum_admin_category_list', {'forum_filter': forum_filter}) -}}">
+            {{- 'link.return_to_list' |trans({}, 'FuturaForumBundle') -}}
+        </a>
+    </div>
+{% endblock %} 
+
+
 {%- block body_content -%}
-    {%- spaceless -%}
+{%- spaceless -%}
 
-	<section class="clearfix">
-	
-	    <form action="{{- path('ccdn_forum_admin_category_delete_process', {'categoryId': category.id, 'forum_filter': forum_filter}) -}}"
-		 method="post" {{ form_enctype(form) }} class="form-horizontal" novalidate>
-	        <fieldset>
+<section class="clearfix">
 
-				<div class="form-group">
-					<div class="col-lg-offset-2 col-lg-10">
-						<h4>
-							{{- 'title.admin.manage-categories.delete' |trans({'%category_name%': category.name}, 'CCDNForumForumBundle') -}}
-						</h4>
-					</div>
-				</div>
+    <form action="{{- path('ccdn_forum_admin_category_delete_process', {'categoryId': category.id, 'forum_filter': forum_filter}) -}}"
+          method="post" {{ form_enctype(form) }} class="form-horizontal" novalidate>
+        <fieldset>
 
-				{{- form_errors(form) -}}
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <h4>
+                        {{- 'title.admin.manage-categories.delete' |trans({'%category_name%': category.name}, 'CCDNForumForumBundle') -}}
+                    </h4>
+                </div>
+            </div>
 
-				{{- form_rest(form) -}}
+            {{- form_errors(form) -}}
 
-				<div class="form-group">
-					<div class="col-lg-offset-2 col-lg-10">
-		                <input type="submit" class="btn btn-danger" value="
-							{{- 'form.button.confirm-delete' |trans({}, 'CCDNForumForumBundle') -}}
-						" name="submit[post]" id="submit[post]">
+            <div class="form-group">
+                {{- form_label(form.confirm_delete, null, { 'label_attr' : {'class' : 'col-sm-6 control-label text-left'} })  -}}
+                {{- form_errors(form.confirm_delete) -}}
+                <div class="col-sm-3">{{- form_widget(form.confirm_delete) -}}</div>
+            </div>
+            <div class="form-group">
+                {{- form_label(form.confirm_subordinates, null, { 'label_attr' : {'class' : 'col-sm-6 control-label'} })  -}}
+                {{- form_errors(form.confirm_subordinates) -}}
+                <div class="col-sm-3">{{- form_widget(form.confirm_subordinates) -}}</div>
+            </div>
 
-		                <a class="btn btn-default" href="{{- path('ccdn_forum_admin_category_list', { 'forum_filter': forum_filter}) -}}">
-							{{- 'form.button.cancel' |trans({}, 'CCDNForumForumBundle') -}}
-						</a>
-					</div>
-	            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <div class="btn-group">
+                        <input type="submit" class="btn btn-danger" value="
+                               {{- 'form.button.confirm-delete' |trans({}, 'CCDNForumForumBundle') -}}
+                               " name="submit[post]" id="submit[post]">
 
-	        </fieldset>
-	    </form>
-	</section>
+                        <a class="btn btn-default" href="{{- path('ccdn_forum_admin_category_list', { 'forum_filter': forum_filter}) -}}">
+                            {{- 'form.button.cancel' |trans({}, 'CCDNForumForumBundle') -}}
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    {%- endspaceless -%}
+        </fieldset>
+    </form>
+</section>
+
+{%- endspaceless -%}
 {%- endblock body_content -%}

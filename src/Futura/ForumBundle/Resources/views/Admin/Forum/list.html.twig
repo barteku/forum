@@ -42,15 +42,17 @@
 							<td>{{- forum.name -}}</td>
 							<td>{{- forum.categories |length -}}</td>
 							<td>
-								<a class="btn btn-default" href="{{- path('ccdn_forum_admin_forum_edit', {'forumId': forum.id}) -}}" id="update_forum[{{- forum.name -}}]">
+								<div class="btn-group">
+                                                                    <a class="btn btn-default" href="{{- path('ccdn_forum_admin_forum_edit', {'forumId': forum.id}) -}}" id="update_forum[{{- forum.name -}}]">
 									{{- 'link.edit' |trans({}, 'CCDNForumForumBundle') -}}
-								</a>
+                                                                    </a>
 
-								{%- if is_granted('ROLE_SUPER_ADMIN') -%}
-									<a class="btn btn-danger" href="{{- path('ccdn_forum_admin_forum_delete', {'forumId': forum.id}) -}}" id="delete_forum[{{- forum.name -}}]">
-										{{- 'link.delete' |trans({}, 'CCDNForumForumBundle') -}}
-									</a>
-								{%- endif -%}
+                                                                    {%- if is_granted('ROLE_SUPER_ADMIN') -%}
+                                                                            <a class="btn btn-danger" href="{{- path('ccdn_forum_admin_forum_delete', {'forumId': forum.id}) -}}" id="delete_forum[{{- forum.name -}}]">
+                                                                                    {{- 'link.delete' |trans({}, 'CCDNForumForumBundle') -}}
+                                                                            </a>
+                                                                    {%- endif -%}
+                                                                </div>
 							</td>
 						</tr>
 					{%- endfor -%}
