@@ -96,14 +96,6 @@ knp_menu:
     default_renderer: twig # The renderer to use, list is also available by default
     
 ccdn_forum_forum:
-    forum:
-        admin:
-            edit:
-                form_theme: CCDNComponentCommonBundle:Common:Form/fields.html.twig
-    board:
-        admin:
-            edit:
-                form_theme: CCDNComponentCommonBundle:Common:Form/fields.html.twig
     form:
         type:
             board_update:

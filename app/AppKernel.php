@@ -22,8 +22,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Futura\UserBundle\FuturaUserBundle(),
             new Futura\ForumBundle\FuturaForumBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new CCDNComponent\CommonBundle\CCDNComponentCommonBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
